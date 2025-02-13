@@ -6,8 +6,8 @@ def extract_program_id(input: str) -> str | None:
     match = re.search(r'(lv\d+)', input)
     return match.group(1) if match is not None else None
 
-def exec_ffmpeg(args: list[str], log_path: Path | None = None):
-    command = ['ffmpeg', *args]
+def exec_ffmpeg(args: list[str], ffmpeg_path = 'ffmpeg', log_path: Path | None = None):
+    command = [ffmpeg_path, *args]
     print(' '.join(command))
 
     if log_path is None:

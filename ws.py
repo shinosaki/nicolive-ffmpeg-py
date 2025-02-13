@@ -16,7 +16,8 @@ from consts import (
 )
 
 class NicoLiveWS():
-    def __init__(self, program_id: str, output_path: Path):
+    def __init__(self, program_id: str, output_path: Path, ffmpeg_path: str):
+        self.ffmpeg_path = ffmpeg_path
         self.ffmpeg_process = None
         self.output_path = output_path
         # self.log_path = self.output_path.parent / 'app.log'
@@ -127,6 +128,7 @@ class NicoLiveWS():
 
         self.ffmpeg_process = utils.exec_ffmpeg(
             ffmpeg_args,
+            self.ffmpeg_path
             # self.log_path
         )
 
