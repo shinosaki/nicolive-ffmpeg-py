@@ -4,7 +4,7 @@ This Python script is a wrapper for processing NicoNicoLive streams using ffmpeg
 
 ## Download
 
-[Releases Page](./releases)
+[Releases Page](https://github.com/shinosaki/nicolive-ffmpeg-py/releases)
 
 ## Usage
 
