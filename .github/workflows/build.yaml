@@ -27,8 +27,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build with PyInstaller
+      - name: Build with PyInstaller (Linux)
+        if: runner.os == 'Linux'
         run: pyinstaller --onefile --name cli cli.py
+        shell: bash
+
+      - name: Build with PyInstaller (Windows)
+        if: runner.os == 'Windows'
+        run: pyinstaller --onefile --name cli cli.py
+        shell: cmd
 
       - name: Archive output
         uses: actions/upload-artifact@v4
