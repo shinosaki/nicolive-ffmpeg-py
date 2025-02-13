@@ -29,13 +29,12 @@ jobs:
 
       - name: Build with PyInstaller
         run: pyinstaller --onefile --name cli cli.py
-        shell: ${{ (runner.os == 'Windows') && 'cmd' || 'bash' }}
 
       - name: Archive output
         uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}-cli
-          path: dist/cli${{ (runner.os == 'Windows') && '.exe' || '' }}
+          path: dist/cli${{ runner.os == 'Windows' && '.exe' || '' }}
 
   release:
     needs: build
