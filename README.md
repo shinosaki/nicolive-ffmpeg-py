@@ -1,5 +1,7 @@
 # nicolive-ffmpeg-py
 
+**このプロジェクトは更新されません**: ライブ配信の自動通知機能などを備えたCLIツール [shinosaki/namagent](https://github.com/shinosaki/namagent) をご利用ください。
+
 This Python script is a wrapper for processing NicoNicoLive streams using ffmpeg.
 
 ## Download
